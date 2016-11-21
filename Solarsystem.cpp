@@ -5,7 +5,6 @@
 #define PI 3.14159265
 
 
-Matrix Wing, Wing2, Wing3, Wing4, Wing5, Wing6, Wing7, Wing8;
 bool LeftFan, RightFan, LeftFanOff, RightFanOff, Increase, Decrease;
 int  Speed = 35;
 //Initializes 3D rendering
@@ -49,7 +48,7 @@ void drawScene() {
 			glVertex2f(x, y);
 		}
 		glEnd();
-	
+
 		glBegin(GL_LINES);
 		for (int i = 0; i<200; i++)
 		{
@@ -93,7 +92,7 @@ void drawScene() {
 			glPushMatrix();
 			glRotatef(_angle, 0, 0, 1);
 			glutWireSphere(.5, 20, 20);
-			glPopMatrix();		
+			glPopMatrix();
 		glPopMatrix();
 		//Sun end
 
@@ -115,7 +114,7 @@ void drawScene() {
 			glPushMatrix();
 			glRotatef(_angle, 0, 0, 1);
 			glutWireSphere(.15, 15, 15);
-			glPopMatrix();	
+			glPopMatrix();
 		glPopMatrix();
 
 		glColor3f(0, 0, 1);
@@ -125,7 +124,7 @@ void drawScene() {
 			glPushMatrix();
 			glRotatef(_angle, 0, 0, 1);
 			glutWireSphere(.2, 15, 15);
-			glPopMatrix();		
+			glPopMatrix();
 		glPopMatrix();
 
 		glColor3f(0, 1, 1);
@@ -135,7 +134,7 @@ void drawScene() {
 			glPushMatrix();
 			glRotatef(_angle, 0, 0, 1);
 			glutWireSphere(.25, 15, 15);
-			glPopMatrix();		
+			glPopMatrix();
 		glPopMatrix();
 		//planet end
 	glPopMatrix();
@@ -211,7 +210,7 @@ void update(int value) {
 		}
 		cout << "speed deccreased" << endl;
 		break;
-		
+
 	case 's':
 		if (LeftFan)
 		{
@@ -227,10 +226,10 @@ void update(int value) {
 		}
 		break;
 	case 'd':
-		
+
 		break;
 	case 'x':
-		
+
 		break;
 	default:
 		/*cout << "Pressed key : " << (char)key
@@ -240,21 +239,9 @@ void update(int value) {
 }
 
 }*/
-int main(int argc, char** argv) 
+int main(int argc, char** argv)
 {
 
-	Wing = DrawQuad(0,0,.5,-.5,3.5,-.40,3.49,0);
-	Wing2 = Roation(Wing, 90);
-	Wing3 = Roation(Wing2, 90);
-	Wing4 = Roation(Wing3, 90);
-
-	Wing5 = DrawQuad(0, 0, 3.5, 0, 3.5, .40, .5,.5);
-	Wing6 = Roation(Wing5, 90);
-	Wing7 = Roation(Wing6, 90);
-	Wing8 = Roation(Wing7, 90);
-
-	cout << "Press 1 to select left fan.2 to select right fan:"<<endl;
-	cout << "Press + or - to (increase,decrease) Fan speed:" << endl;
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(600, 600);
